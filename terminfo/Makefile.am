@@ -1,4 +1,5 @@
 EXTRA_DIST = fbterm
 
 install-data-local:
-	TERMINFO=$(DESTDIR)/lib/terminfo/ tic fbterm
+	tic fbterm
+	install -D -m 0644 fbterm $(DESTDIR)/lib/terminfo/

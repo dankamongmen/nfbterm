@@ -146,7 +146,7 @@ static s16 get_mode(s16 mode, bool only_print)
 		return -1;
 	}
 
-	s16 *mode_list = (s16*)(info->video_mode_list_seg * 16 + info->video_mode_list_off);
+	s16 *mode_list = (s16*)(unsigned long)(info->video_mode_list_seg * 16 + info->video_mode_list_off);
 	vbe_mode_info_block *minfo = (vbe_mode_info_block *)LRMI_alloc_real(sizeof(*minfo));
 	u32 xres_tmp, yres_tmp, bpp_tmp;
 	s16 mode_tmp = -1;
